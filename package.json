@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "build:core": "npm run build --workspace equicharts"
+    "build:core": "npm run build --workspace equicharts",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
   },
   "dependencies": {
     "solid-js": "^1.8.19"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "equicharts": "workspaces/equicharts",
     "less": "^4.2.0",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "vite": "^5.4.0",
     "vite-plugin-solid": "^2.10.2"
