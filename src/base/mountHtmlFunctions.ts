@@ -1,9 +1,8 @@
 // priceUnitModule.ts
 
-import { DeepPartial, Styles, YAxisType, utils } from  'equicharts';
+import { DeepPartial, Styles, YAxisType, utils } from 'equicharts';
 import { Setter } from 'solid-js';
 import { SymbolInfo } from '../types';
-
 
 export function createPriceUnitElement(): HTMLSpanElement {
   const priceUnitDom = document.createElement('span');
@@ -22,12 +21,12 @@ export function createLogarithmicButton(
   setIsLogarithmic: Setter<boolean>,
   isLogarithmic: () => boolean,
   isPercentage: () => boolean,
-  handleSelectedYAxisDataSource: (style: DeepPartial<Styles>) => void
+  handleSelectedYAxisDataSource: (style: DeepPartial<Styles>) => void,
 ): HTMLDivElement {
   const logarthimic = document.createElement('div');
   logarthimic.className = 'price-type-buttons';
-  logarthimic.innerHTML = "L";
-  const tooltip = createTooltip("Toggle Logarthimic View");
+  logarthimic.innerHTML = 'L';
+  const tooltip = createTooltip('Toggle Logarthimic View');
   document.body.appendChild(tooltip);
   logarthimic.onmouseover = (e: MouseEvent) => {
     tooltip.style.display = 'block';
@@ -40,14 +39,14 @@ export function createLogarithmicButton(
   logarthimic.onclick = () => {
     setIsLogarithmic(!isLogarithmic());
     if (!isPercentage()) {
-      logarthimic.style.backgroundColor = isLogarithmic() ? "#2962ff" : "";
+      logarthimic.style.backgroundColor = isLogarithmic() ? '#2962ff' : '';
     } else {
-      logarthimic.style.backgroundColor = "";
+      logarthimic.style.backgroundColor = '';
     }
     handleSelectedYAxisDataSource({
       yAxis: {
-        type: isLogarithmic() ? YAxisType.Log : YAxisType.Normal
-      }
+        type: isLogarithmic() ? YAxisType.Log : YAxisType.Normal,
+      },
     });
   };
   return logarthimic;
@@ -58,12 +57,12 @@ export function createPercentageButton(
   isPercentage: () => boolean,
   isLogarithmic: () => boolean,
   logarthimic: HTMLElement,
-  handleSelectedYAxisDataSource: (style: DeepPartial<Styles>) => void
+  handleSelectedYAxisDataSource: (style: DeepPartial<Styles>) => void,
 ): HTMLDivElement {
   const percentage = document.createElement('div');
   percentage.className = 'price-type-buttons';
-  percentage.innerHTML = "P";
-  const tooltip = createTooltip("Toggle Percentage View");
+  percentage.innerHTML = 'P';
+  const tooltip = createTooltip('Toggle Percentage View');
   document.body.appendChild(tooltip);
   percentage.onmouseover = (e: MouseEvent) => {
     tooltip.style.display = 'block';
@@ -76,19 +75,19 @@ export function createPercentageButton(
   percentage.onclick = () => {
     setIsPercentage(!isPercentage());
     if (isPercentage()) {
-      percentage.style.backgroundColor = "#2962ff";
-      logarthimic.style.backgroundColor = "";
+      percentage.style.backgroundColor = '#2962ff';
+      logarthimic.style.backgroundColor = '';
     } else {
-      percentage.style.backgroundColor = "";
+      percentage.style.backgroundColor = '';
       if (isLogarithmic()) {
-        logarthimic.style.backgroundColor = "#2962ff";
+        logarthimic.style.backgroundColor = '#2962ff';
       }
     }
     handleSelectedYAxisDataSource({
       yAxis: {
-        type: isPercentage() ? YAxisType.Percentage : YAxisType.Normal
-      }
-    })
+        type: isPercentage() ? YAxisType.Percentage : YAxisType.Normal,
+      },
+    });
   };
 
   return percentage;
