@@ -1,4 +1,4 @@
-import { createSignal, JSX } from "solid-js";
+import { createSignal, JSX } from 'solid-js';
 
 interface TooltipProps {
   text: string;
@@ -21,7 +21,11 @@ function Tooltip(props: TooltipProps) {
     >
       {props.children}
       {visible() && (
-        <div class="tooltip" style={{ "top": `${props.top_length}px` }} ref={tooltipRef}>
+        <div
+          class="tooltip"
+          style={{ top: `${props.top_length}px` }}
+          ref={tooltipRef}
+        >
           {props.text}
         </div>
       )}
@@ -30,4 +34,3 @@ function Tooltip(props: TooltipProps) {
 }
 
 export default Tooltip;
-
