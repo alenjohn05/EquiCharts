@@ -1,5 +1,4 @@
- 
-import { VoidComponent } from "solid-js";
+import { VoidComponent } from 'solid-js';
 
 const Loding: VoidComponent = () => {
   return (
@@ -8,7 +7,7 @@ const Loding: VoidComponent = () => {
       <i class="circle2" />
       <i class="circle3" />
     </div>
-  )
-}
+  );
+};
 
-export default Loding
+export default Loding;
