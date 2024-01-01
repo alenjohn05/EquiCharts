@@ -1,5 +1,4 @@
- 
-import { OverlayTemplate, Coordinate } from  'equicharts'
+import { OverlayTemplate, Coordinate } from 'equicharts';
 
 const abcd: OverlayTemplate = {
   name: 'abcd',
@@ -8,38 +7,41 @@ const abcd: OverlayTemplate = {
   needDefaultXAxisFigure: true,
   needDefaultYAxisFigure: true,
   createPointFigures: ({ coordinates }) => {
-    let acLineCoordinates: Coordinate[] = []
-    let bdLineCoordinates: Coordinate[] = []
-   
-    const tags = ['A', 'B', 'C', 'D']
+    let acLineCoordinates: Coordinate[] = [];
+    let bdLineCoordinates: Coordinate[] = [];
+
+    const tags = ['A', 'B', 'C', 'D'];
     const texts = coordinates.map((coordinate, i) => ({
       ...coordinate,
       baseline: 'bottom',
-      text: `(${tags[i]})`
-    }))
+      text: `(${tags[i]})`,
+    }));
     if (coordinates.length > 2) {
-      acLineCoordinates = [coordinates[0], coordinates[2]]
+      acLineCoordinates = [coordinates[0], coordinates[2]];
       if (coordinates.length > 3) {
-        bdLineCoordinates = [coordinates[1], coordinates[3]]
+        bdLineCoordinates = [coordinates[1], coordinates[3]];
       }
     }
     return [
       {
         type: 'line',
-        attrs: { coordinates }
+        attrs: { coordinates },
       },
       {
         type: 'line',
-        attrs: [{ coordinates: acLineCoordinates }, { coordinates: bdLineCoordinates }],
-        styles: { style: 'dashed' }
+        attrs: [
+          { coordinates: acLineCoordinates },
+          { coordinates: bdLineCoordinates },
+        ],
+        styles: { style: 'dashed' },
       },
       {
         type: 'text',
         ignoreEvent: true,
-        attrs: texts
-      }
-    ]
-  }
-}
+        attrs: texts,
+      },
+    ];
+  },
+};
 
-export default abcd
+export default abcd;
