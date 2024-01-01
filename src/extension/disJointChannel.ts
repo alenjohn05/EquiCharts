@@ -2,25 +2,25 @@ import {
   OverlayTemplate,
   Coordinate,
   PolygonAttrs,
-  LineAttrs
-} from "equicharts ";
+  LineAttrs,
+} from 'equicharts ';
 
 let height = 0;
 
 const disJointChannel: OverlayTemplate = {
-  name: "disJointChannel",
+  name: 'disJointChannel',
   totalStep: 4,
   needDefaultPointFigure: true,
   needDefaultXAxisFigure: true,
   needDefaultYAxisFigure: true,
   styles: {
     polygon: {
-      color: "#FCB9002b"
+      color: '#FCB9002b',
     },
     line: {
       size: 2,
-      color: "#FCB900"
-    }
+      color: '#FCB900',
+    },
   },
   createPointFigures: ({ coordinates, bounding }) => {
     let mainLine: LineAttrs[] = [];
@@ -35,30 +35,30 @@ const disJointChannel: OverlayTemplate = {
         {
           coordinates: [
             { x: coordinates[0].x, y: coordinates[0].y },
-            { x: coordinates[1].x, y: coordinates[1].y }
-          ]
-        }
+            { x: coordinates[1].x, y: coordinates[1].y },
+          ],
+        },
       ];
       dashedLines.push({
         coordinates: [
           { x: coordinates[1].x, y: coordinates[2].y },
-          { x: coordinates[0].x, y: coordinates[2].y + height }
-        ]
+          { x: coordinates[0].x, y: coordinates[2].y + height },
+        ],
       });
     } else {
       mainLine = [{ coordinates: coordinates }];
     }
     return [
       {
-        type: "line",
+        type: 'line',
         ignoreEvent: false,
-        attrs: mainLine
+        attrs: mainLine,
       },
       {
-        type: "line",
+        type: 'line',
         ignoreEvent: false,
-        attrs: dashedLines
-      }
+        attrs: dashedLines,
+      },
     ];
   },
   performEventMoveForDrawing: ({ currentStep, points, performPoint }) => {
@@ -80,7 +80,7 @@ const disJointChannel: OverlayTemplate = {
         points[1].dataIndex = performPoint.dataIndex;
         break;
     }
-  }
+  },
 };
 
 export default disJointChannel;
