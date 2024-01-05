@@ -1,6 +1,4 @@
-
-
-import { OverlayTemplate } from  'equicharts'
+import { OverlayTemplate } from 'equicharts';
 
 const crossLine: OverlayTemplate = {
   name: 'crossLine',
@@ -9,34 +7,39 @@ const crossLine: OverlayTemplate = {
   needDefaultXAxisFigure: true,
   needDefaultYAxisFigure: true,
   createPointFigures: ({ coordinates, bounding }) => {
-    return [{
-      type: 'line',
-      attrs: {
-        coordinates: [
-          {
-            x: 0,
-            y: coordinates[0].y
-          }, {
-            x: bounding.width,
-            y: coordinates[0].y
-          }
-        ]
-      }
-    }, {
-      type: 'line',
-      attrs: {
-        coordinates: [
-          {
-            x: coordinates[0].x,
-            y: 0
-          }, {
-            x: coordinates[0].x,
-            y: bounding.height
-          }
-        ]
-      }
-    }]
-  }
-}
+    return [
+      {
+        type: 'line',
+        attrs: {
+          coordinates: [
+            {
+              x: 0,
+              y: coordinates[0].y,
+            },
+            {
+              x: bounding.width,
+              y: coordinates[0].y,
+            },
+          ],
+        },
+      },
+      {
+        type: 'line',
+        attrs: {
+          coordinates: [
+            {
+              x: coordinates[0].x,
+              y: 0,
+            },
+            {
+              x: coordinates[0].x,
+              y: bounding.height,
+            },
+          ],
+        },
+      },
+    ];
+  },
+};
 
-export default crossLine
+export default crossLine;
