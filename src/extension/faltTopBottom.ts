@@ -1,6 +1,4 @@
-
-
-import { PolygonAttrs, LineAttrs, OverlayTemplate } from  'equicharts';
+import { PolygonAttrs, LineAttrs, OverlayTemplate } from 'equicharts';
 
 const faltTopBottom: OverlayTemplate = {
   name: 'faltTopBottom',
@@ -10,12 +8,12 @@ const faltTopBottom: OverlayTemplate = {
   needDefaultYAxisFigure: false,
   styles: {
     polygon: {
-      color: '#FCB9002b'
+      color: '#FCB9002b',
     },
-    line:{
-      size:2,
-      color: '#FCB900'
-    }
+    line: {
+      size: 2,
+      color: '#FCB900',
+    },
   },
   createPointFigures: ({ coordinates, overlay }) => {
     let mainLine: LineAttrs[] = [];
@@ -23,29 +21,43 @@ const faltTopBottom: OverlayTemplate = {
     const polygons: PolygonAttrs[] = [];
 
     if (coordinates.length > 2) {
-      mainLine = [{ coordinates: [{ x: coordinates[0].x, y: coordinates[2].y }, { x: coordinates[1].x, y: coordinates[2].y }] }]
-      polygons.push({ coordinates: [coordinates[0], coordinates[1], { x: coordinates[1].x, y: coordinates[2].y }, { x: coordinates[0].x, y: coordinates[2].y }] });
+      mainLine = [
+        {
+          coordinates: [
+            { x: coordinates[0].x, y: coordinates[2].y },
+            { x: coordinates[1].x, y: coordinates[2].y },
+          ],
+        },
+      ];
+      polygons.push({
+        coordinates: [
+          coordinates[0],
+          coordinates[1],
+          { x: coordinates[1].x, y: coordinates[2].y },
+          { x: coordinates[0].x, y: coordinates[2].y },
+        ],
+      });
       dashedLines.push({ coordinates: [coordinates[0], coordinates[1]] });
     } else {
-      mainLine = [{ coordinates: coordinates }]
+      mainLine = [{ coordinates: coordinates }];
     }
     return [
       {
         type: 'line',
         attrs: mainLine,
-        size: 2
+        size: 2,
       },
       {
         type: 'polygon',
         ignoreEvent: true,
-        attrs: polygons
+        attrs: polygons,
       },
       {
         type: 'line',
         attrs: dashedLines,
-        size: 2
+        size: 2,
       },
-    ]
+    ];
   },
   performEventMoveForDrawing: ({ currentStep, points, performPoint }) => {
     switch (currentStep) {
@@ -55,7 +67,7 @@ const faltTopBottom: OverlayTemplate = {
         break;
     }
   },
-  performEventPressedMove: ({ points, performPointIndex, performPoint}) => {
+  performEventPressedMove: ({ points, performPointIndex, performPoint }) => {
     switch (performPointIndex) {
       case 1:
         points[2].timestamp = performPoint.timestamp;
