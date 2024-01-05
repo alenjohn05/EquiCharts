@@ -1,5 +1,4 @@
-
-import { OverlayTemplate, Coordinate } from  'equicharts'
+import { OverlayTemplate, Coordinate } from 'equicharts';
 
 const elliotTripleComboWaves: OverlayTemplate = {
   name: 'elliotTripleComboWaves',
@@ -8,32 +7,35 @@ const elliotTripleComboWaves: OverlayTemplate = {
   needDefaultXAxisFigure: true,
   needDefaultYAxisFigure: true,
   createPointFigures: ({ coordinates }) => {
-    let acLineCoordinates: Coordinate[] = []
-    let bdLineCoordinates: Coordinate[] = []
-   
-    const tags = ['(0)', '(W)', '(X)', '(Y)','(Z)']
+    let acLineCoordinates: Coordinate[] = [];
+    let bdLineCoordinates: Coordinate[] = [];
+
+    const tags = ['(0)', '(W)', '(X)', '(Y)', '(Z)'];
     const texts = coordinates.map((coordinate, i) => ({
       ...coordinate,
       baseline: 'bottom',
-      text: `(${tags[i]})`
-    }))
+      text: `(${tags[i]})`,
+    }));
     return [
       {
         type: 'line',
-        attrs: { coordinates }
+        attrs: { coordinates },
       },
       {
         type: 'line',
-        attrs: [{ coordinates: acLineCoordinates }, { coordinates: bdLineCoordinates }],
-        styles: { style: 'dashed' }
+        attrs: [
+          { coordinates: acLineCoordinates },
+          { coordinates: bdLineCoordinates },
+        ],
+        styles: { style: 'dashed' },
       },
       {
         type: 'text',
         ignoreEvent: true,
-        attrs: texts
-      }
-    ]
-  }
-}
+        attrs: texts,
+      },
+    ];
+  },
+};
 
-export default elliotTripleComboWaves
+export default elliotTripleComboWaves;
