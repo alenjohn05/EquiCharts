@@ -1,6 +1,4 @@
-
-
-import { OverlayTemplate } from  'equicharts';
+import { OverlayTemplate } from 'equicharts';
 
 const tradingPlan: OverlayTemplate = {
   name: 'tradingPlan',
@@ -48,7 +46,7 @@ const tradingPlan: OverlayTemplate = {
         return [bottomRect, topRect];
       }
     }
-    return []
+    return [];
   },
   performEventMoveForDrawing: ({ currentStep, points, performPoint }) => {
     switch (currentStep) {
