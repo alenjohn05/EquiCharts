@@ -1,5 +1,4 @@
- 
-import { OverlayTemplate } from  'equicharts'
+import { OverlayTemplate } from 'equicharts';
 
 const triangle: OverlayTemplate = {
   name: 'triangle',
@@ -9,18 +8,18 @@ const triangle: OverlayTemplate = {
   needDefaultYAxisFigure: true,
   styles: {
     polygon: {
-      color: 'rgba(22, 119, 255, 0.15)'
-    }
+      color: 'rgba(22, 119, 255, 0.15)',
+    },
   },
   createPointFigures: ({ coordinates }) => {
     return [
       {
         type: 'polygon',
         attrs: { coordinates },
-        styles: { style: 'stroke_fill' }
-      }
-    ]
-  }
-}
+        styles: { style: 'stroke_fill' },
+      },
+    ];
+  },
+};
 
-export default triangle
+export default triangle;
