@@ -1,51 +1,78 @@
- 
-import { Coordinate, Bounding, LineAttrs, utils } from  'equicharts'
-import { Period } from '../types'
+import { Coordinate, Bounding, LineAttrs, utils } from 'equicharts';
+import { Period } from '../types';
 
-export function getRotateCoordinate(coordinate: Coordinate, targetCoordinate: Coordinate, angle: number): Coordinate {
-  const x = (coordinate.x - targetCoordinate.x) * Math.cos(angle) - (coordinate.y - targetCoordinate.y) * Math.sin(angle) + targetCoordinate.x
-  const y = (coordinate.x - targetCoordinate.x) * Math.sin(angle) + (coordinate.y - targetCoordinate.y) * Math.cos(angle) + targetCoordinate.y
-  return { x, y }
+export function getRotateCoordinate(
+  coordinate: Coordinate,
+  targetCoordinate: Coordinate,
+  angle: number,
+): Coordinate {
+  const x =
+    (coordinate.x - targetCoordinate.x) * Math.cos(angle) -
+    (coordinate.y - targetCoordinate.y) * Math.sin(angle) +
+    targetCoordinate.x;
+  const y =
+    (coordinate.x - targetCoordinate.x) * Math.sin(angle) +
+    (coordinate.y - targetCoordinate.y) * Math.cos(angle) +
+    targetCoordinate.y;
+  return { x, y };
 }
 
-export function getRayLine(coordinates: Coordinate[], bounding: Bounding): LineAttrs | LineAttrs[] {
+export function getRayLine(
+  coordinates: Coordinate[],
+  bounding: Bounding,
+): LineAttrs | LineAttrs[] {
   if (coordinates.length > 1) {
-    let coordinate: Coordinate
-    if (coordinates[0].x === coordinates[1].x && coordinates[0].y !== coordinates[1].y) {
+    let coordinate: Coordinate;
+    if (
+      coordinates[0].x === coordinates[1].x &&
+      coordinates[0].y !== coordinates[1].y
+    ) {
       if (coordinates[0].y < coordinates[1].y) {
         coordinate = {
           x: coordinates[0].x,
-          y: bounding.height
-        }
+          y: bounding.height,
+        };
       } else {
         coordinate = {
           x: coordinates[0].x,
-          y: 0
-        }
+          y: 0,
+        };
       }
     } else if (coordinates[0].x > coordinates[1].x) {
       coordinate = {
         x: 0,
-        y: utils.getLinearYFromCoordinates(coordinates[0], coordinates[1], { x: 0, y: coordinates[0].y })
-      }
+        y: utils.getLinearYFromCoordinates(coordinates[0], coordinates[1], {
+          x: 0,
+          y: coordinates[0].y,
+        }),
+      };
     } else {
       coordinate = {
         x: bounding.width,
-        y: utils.getLinearYFromCoordinates(coordinates[0], coordinates[1], { x: bounding.width, y: coordinates[0].y })
-      }
+        y: utils.getLinearYFromCoordinates(coordinates[0], coordinates[1], {
+          x: bounding.width,
+          y: coordinates[0].y,
+        }),
+      };
     }
-    return { coordinates: [coordinates[0], coordinate] }
+    return { coordinates: [coordinates[0], coordinate] };
   }
-  return []
+  return [];
 }
 
-export function getDistance(coordinate1: Coordinate, coordinate2: Coordinate,): number {
-  const xDis = Math.abs(coordinate1.x - coordinate2.x)
-  const yDis = Math.abs(coordinate1.y - coordinate2.y)
-  return Math.sqrt(xDis * xDis + yDis * yDis)
+export function getDistance(
+  coordinate1: Coordinate,
+  coordinate2: Coordinate,
+): number {
+  const xDis = Math.abs(coordinate1.x - coordinate2.x);
+  const yDis = Math.abs(coordinate1.y - coordinate2.y);
+  return Math.sqrt(xDis * xDis + yDis * yDis);
 }
 
-export function getAngle(coordinate1: Coordinate, coordinate2: Coordinate,): number {
+export function getAngle(
+  coordinate1: Coordinate,
+  coordinate2: Coordinate,
+): number {
   const dx = coordinate2.x - coordinate1.x;
   const dy = coordinate2.y - coordinate1.y;
   const radians = Math.atan2(dy, dx);
@@ -53,27 +80,43 @@ export function getAngle(coordinate1: Coordinate, coordinate2: Coordinate,): num
   return degrees;
 }
 
-export function getMidpoint(coordinate1: Coordinate, coordinate2: Coordinate,): { x: number; y: number; } {
+export function getMidpoint(
+  coordinate1: Coordinate,
+  coordinate2: Coordinate,
+): { x: number; y: number } {
   const x = (coordinate1.x + coordinate2.x) / 2;
   const y = (coordinate1.y + coordinate2.y) / 2;
   return { x, y };
 }
 
 export function formatThousands(value: string | number, sign: string): string {
-  const vl = `${value}`
+  const vl = `${value}`;
   if (sign.length === 0) {
-    return vl
+    return vl;
   }
   if (vl.includes('.')) {
-    const arr = vl.split('.')
-    return `${arr[0].replace(/(\d)(?=(\d{3})+$)/g, $1 => `${$1}${sign}`)}.${arr[1]}`
+    const arr = vl.split('.');
+    return `${arr[0].replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1}${sign}`)}.${arr[1]}`;
   }
-  return vl.replace(/(\d)(?=(\d{3})+$)/g, $1 => `${$1}${sign}`)
+  return vl.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1}${sign}`);
 }
 
 export function formatDate(timestamp: number): string {
-  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
 
   const date = new Date(timestamp);
 
@@ -85,7 +128,11 @@ export function formatDate(timestamp: number): string {
   return `${dayOfWeek} ${day} ${month}' ${year}`;
 }
 
-export function addPeriodsToTimestamp(period: Period, timestamp: number, multiplier:number) {
+export function addPeriodsToTimestamp(
+  period: Period,
+  timestamp: number,
+  multiplier: number,
+) {
   let newTimestamp = timestamp;
   switch (period.timespan) {
     case 'minute': {
@@ -124,4 +171,4 @@ export function addPeriodsToTimestamp(period: Period, timestamp: number, multipl
       throw new Error(`Unsupported timespan: ${period.timespan}`);
   }
   return newTimestamp;
-};
+}
