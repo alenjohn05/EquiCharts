@@ -1,5 +1,3 @@
-const chartOverlays: never[] = [
-  
-]
+const chartOverlays: never[] = [];
 
-export default chartOverlays
+export default chartOverlays;
