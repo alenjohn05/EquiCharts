@@ -1,0 +1,7 @@
+scripts/
+dist/
+docs/
+.eslintrc.cjs
+index.js
+vite.config.js
+node_modules/
