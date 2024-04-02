@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "build:core": "npm run build --workspace equicharts",
+    "build:core": "npm run build --workspace core",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
   },
   "dependencies": {
@@ -15,7 +15,8 @@
     "solid-js": "^1.8.19"
   },
   "devDependencies": {
-    "equicharts": "workspaces/equicharts",
+    "dts-bundle-generator": "^9.5.1",
+    "equicharts": "workspaces/core",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "prettier": "^3.3.3",
@@ -24,6 +25,6 @@
     "vite-plugin-solid": "^2.10.2"
   },
   "workspaces": [
-    "equicharts"
+    "core"
   ]
 }
