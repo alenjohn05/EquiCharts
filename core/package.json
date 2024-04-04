@@ -1,0 +1,52 @@
+{
+  "name": "equicharts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/equicharts.cjs",
+  "module": "./dist/equicharts.esm.js",
+  "unpkg": "./dist/equicharts.umd.js",
+  "types": "./dist/index.d.ts",
+  
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "dev": "vite",
+    "build": "npm run lint && tsc && vite build",
+    "preview": "vite preview",
+    "build:dev": "npm run lint && tsc && vite build --mode development",
+    "build:prod": "npm run lint && tsc && vite build --mode production",
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^4.0.0-beta.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist",
+    "scripts"
+  ]
+}
