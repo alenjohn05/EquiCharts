@@ -1,4 +1,4 @@
-import { Coordinate, Bounding, LineAttrs, utils } from 'equicharts';
+import { Coordinate, Bounding, LineAttrs, utils } from '../../core/dist';
 import { Period } from '../types';
 
 export function getRotateCoordinate(

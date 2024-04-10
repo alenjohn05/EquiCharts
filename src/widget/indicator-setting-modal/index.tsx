@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
 
-import { utils } from 'equicharts';
+import { utils } from '../../../core/dist';
 
 import { Modal, Input } from '../../component';
 

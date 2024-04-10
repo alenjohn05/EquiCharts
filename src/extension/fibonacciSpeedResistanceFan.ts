@@ -1,4 +1,4 @@
-import { OverlayTemplate, LineAttrs, TextAttrs } from 'equicharts';
+import { OverlayTemplate, LineAttrs, TextAttrs } from '../../core/dist';
 
 import { getRayLine } from './utils';
 

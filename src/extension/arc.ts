@@ -1,4 +1,4 @@
-import { OverlayTemplate, utils } from 'equicharts';
+import { OverlayTemplate, utils } from '../../core/dist';
 
 const arc: OverlayTemplate = {
   name: 'arc',

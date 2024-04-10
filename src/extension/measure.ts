@@ -1,4 +1,4 @@
-import { utils, type OverlayTemplate, type OverlayFigure } from 'equicharts';
+import { utils, type OverlayTemplate, type OverlayFigure } from '../../core/dist';
 
 const measure: OverlayTemplate = {
   name: 'measure',

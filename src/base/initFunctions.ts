@@ -1,4 +1,4 @@
-import { FormatDateType, utils } from 'equicharts';
+import { FormatDateType, utils } from '../../core/dist';
 import { Setter } from 'solid-js';
 import { Period } from '../types';
 

@@ -1,4 +1,4 @@
-import { OverlayTemplate, Coordinate } from 'equicharts';
+import { OverlayTemplate, Coordinate } from '../../core/dist';
 
 const abcd: OverlayTemplate = {
   name: 'abcd',

@@ -1,4 +1,4 @@
-import { registerOverlay, registerIndicator, registerFigure } from 'equicharts';
+import { registerOverlay, registerIndicator, registerFigure } from '../core/dist';
 
 import overlays from './extension';
 

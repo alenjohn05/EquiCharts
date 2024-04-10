@@ -1,4 +1,4 @@
-import { OverlayTemplate } from 'equicharts';
+import { OverlayTemplate } from '../../core/dist';
 
 const gannBox: OverlayTemplate = {
   name: 'gannBox',

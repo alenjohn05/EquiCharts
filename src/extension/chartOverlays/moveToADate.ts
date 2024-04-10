@@ -4,7 +4,7 @@ import {
   Nullable,
   OverlayCreateFiguresCallbackParams,
   PolygonType,
-} from 'equicharts';
+} from '../../../core/dist';
 import { formatDate } from '../utils';
 
 export function getMoveToADateOverlay(timeData: number) {

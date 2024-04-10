@@ -1,4 +1,4 @@
-import { KLineData } from 'equicharts';
+import { KLineData } from '../core/dist';
 
 import {
   Datafeed,

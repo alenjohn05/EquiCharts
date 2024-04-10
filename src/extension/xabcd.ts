@@ -1,4 +1,4 @@
-import { OverlayTemplate, PolygonAttrs, LineAttrs } from 'equicharts';
+import { OverlayTemplate, PolygonAttrs, LineAttrs } from '../../core/dist';
 
 const xabcd: OverlayTemplate = {
   name: 'xabcd',

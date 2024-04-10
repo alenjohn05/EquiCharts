@@ -1,6 +1,6 @@
 import { Component, createMemo, createSignal } from 'solid-js';
 
-import { OverlayCreate, OverlayMode } from 'equicharts';
+import { OverlayCreate, OverlayMode } from '../../../core/dist';
 
 import { List } from '../../component';
 import {

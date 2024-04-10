@@ -1,4 +1,4 @@
-import { OverlayTemplate } from 'equicharts';
+import { OverlayTemplate } from '../../core/dist';
 
 const triangle: OverlayTemplate = {
   name: 'triangle',
