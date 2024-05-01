@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-import i18n from '../../i18n'
+import i18n from '../../i18n';
 
-export function getOptions (locale: string) {
+export function getOptions(locale: string) {
   return [
     {
       key: 'candle.type',
@@ -26,28 +26,28 @@ export function getOptions (locale: string) {
         { key: 'candle_up_stroke', text: i18n('candle_up_stroke', locale) },
         { key: 'candle_down_stroke', text: i18n('candle_down_stroke', locale) },
         { key: 'ohlc', text: i18n('ohlc', locale) },
-        { key: 'area', text: i18n('area', locale) }
-      ]
+        { key: 'area', text: i18n('area', locale) },
+      ],
     },
     {
       key: 'candle.priceMark.last.show',
       text: i18n('last_price_show', locale),
-      component: 'switch'
+      component: 'switch',
     },
     {
       key: 'candle.priceMark.high.show',
       text: i18n('high_price_show', locale),
-      component: 'switch'
+      component: 'switch',
     },
     {
       key: 'candle.priceMark.low.show',
       text: i18n('low_price_show', locale),
-      component: 'switch'
+      component: 'switch',
     },
     {
       key: 'indicator.lastValueMark.show',
       text: i18n('indicator_last_value_show', locale),
-      component: 'switch'
+      component: 'switch',
     },
     {
       key: 'yAxis.type',
@@ -56,7 +56,7 @@ export function getOptions (locale: string) {
       dataSource: [
         { key: 'normal', text: i18n('normal', locale) },
         { key: 'percentage', text: i18n('percentage', locale) },
-        { key: 'log', text: i18n('log', locale) }
+        { key: 'log', text: i18n('log', locale) },
       ],
     },
     {
@@ -68,6 +68,6 @@ export function getOptions (locale: string) {
       key: 'grid.show',
       text: i18n('grid_show', locale),
       component: 'switch',
-    }
-  ]
+    },
+  ];
 }
