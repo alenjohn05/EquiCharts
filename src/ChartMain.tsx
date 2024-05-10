@@ -24,7 +24,7 @@ export default class ChartMain implements ChartPro {
     } else {
       this._container = options.container as HTMLElement;
     }
-    this._container.classList.add('klinecharts-pro');
+    this._container.classList.add('equicharts');
     this._container.setAttribute('data-theme', options.theme ?? 'light');
 
     render(
