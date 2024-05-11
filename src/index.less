@@ -4,29 +4,29 @@
 @import './iconfonts/style.css';
 
 .@{prefix-cls} {
-  --klinecharts-pro-primary-color: @c-primary;
-  --klinecharts-pro-hover-background-color: @c-hover-background-light;
-  --klinecharts-pro-background-color: @c-background-light;
-  --klinecharts-pro-popover-background-color: @c-popover-background-light;
-  --klinecharts-pro-text-color: @c-text-light;
-  --klinecharts-pro-text-second-color: @c-text-second-light;
-  --klinecharts-pro-border-color: @c-border-light;
-  --klinecharts-pro-selected-color: fade(@c-primary, 15%);
+  --equicharts-primary-color: @c-primary;
+  --equicharts-hover-background-color: @c-hover-background-light;
+  --equicharts-background-color: @c-background-light;
+  --equicharts-popover-background-color: @c-popover-background-light;
+  --equicharts-text-color: @c-text-light;
+  --equicharts-text-second-color: @c-text-second-light;
+  --equicharts-border-color: @c-border-light;
+  --equicharts-selected-color: fade(@c-primary, 15%);
 
   &[data-theme="dark"] {
-    --klinecharts-pro-hover-background-color: @c-hover-background-dark;
-    --klinecharts-pro-background-color: @c-background-dark;
-    --klinecharts-pro-popover-background-color: @c-popover-background-dark;
-    --klinecharts-pro-text-color: @c-text-dark;
-    --klinecharts-pro-text-second-color: @c-text-second-dark;
-    --klinecharts-pro-border-color: @c-border-dark;
+    --equicharts-hover-background-color: @c-hover-background-dark;
+    --equicharts-background-color: @c-background-dark;
+    --equicharts-popover-background-color: @c-popover-background-dark;
+    --equicharts-text-color: @c-text-dark;
+    --equicharts-text-second-color: @c-text-second-dark;
+    --equicharts-border-color: @c-border-dark;
   }
 
   position: relative;
   display: flex;
   flex-direction: column;
-  color: var(--klinecharts-pro-text-color);
-  background-color: var(--klinecharts-pro-background-color);
+  color: var(--equicharts-text-color);
+  background-color: var(--equicharts-background-color);
   font-size: 14px;
   height: 80vh;
 
@@ -40,7 +40,7 @@
     .logo {
       width: 160px;
       height: 184px;
-      fill: var(--klinecharts-pro-border-color);
+      fill: var(--equicharts-border-color);
     }
   }
 
@@ -57,10 +57,10 @@
     font-size: 10px;
     font-weight: bold;
     padding: 1px 4px;
-    color: var(--klinecharts-pro-text-second-color);
+    color: var(--equicharts-text-second-color);
     box-shadow: 0 3px 3px 0 rgba(50, 50, 50, .3);
-    border: solid 1px var(--klinecharts-pro-border-color);
-    background-color: var(--klinecharts-pro-background-color);
+    border: solid 1px var(--equicharts-border-color);
+    background-color: var(--equicharts-background-color);
   }
 
   &-price-type {
@@ -77,17 +77,17 @@
     font-size: 10px;
     cursor: pointer;
     padding: 1px 4px;
-    color: var(--klinecharts-pro-text-second-color);
+    color: var(--equicharts-text-second-color);
     box-shadow: 0 3px 3px 0 rgba(50, 50, 50, .3);
-    background-color: var(--klinecharts-pro-background-color);
+    background-color: var(--equicharts-background-color);
 
     .price-type-buttons {
       font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif;
       font-size: 12px;
-      background-color: var(--klinecharts-pro-background-color);
-      border: 1px solid var(--klinecharts-pro-border-color);
+      background-color: var(--equicharts-background-color);
+      border: 1px solid var(--equicharts-border-color);
       border-radius: 4px;
-      color: var(--klinecharts-pro-text-color);
+      color: var(--equicharts-text-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -98,7 +98,7 @@
       position: relative;
 
       &:hover {
-        background-color: var(--klinecharts-pro-border-color);
+        background-color: var(--equicharts-border-color);
         border-radius: 6px;
       }
     }
@@ -132,16 +132,16 @@
 
   &-footer {
     height: 40px;
-    background-color: var(--klinecharts-pro-background-color);
+    background-color: var(--equicharts-background-color);
     width: 100%;
-    border-top: solid 1px var(--klinecharts-pro-border-color);
+    border-top: solid 1px var(--equicharts-border-color);
   }
 }
 
 .price-type-tooltip-log {
   border-radius: 3px;
   font-size: 14px;
-  background-color: var(--klinecharts-pro-popover-background-color);
+  background-color: var(--equicharts-popover-background-color);
   color: @c-text-dark;
   font-size: 14px;
   background-color: #282828;
@@ -158,7 +158,7 @@
 
 #date-tooltip {
   position: absolute;
-  background-color: var(--klinecharts-pro-popover-background-color);
+  background-color: var(--equicharts-popover-background-color);
   border-radius: 6px;
   padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -183,10 +183,10 @@
   border-radius: 6px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  border: solid 1px var(--klinecharts-pro-popover-background-color);
+  border: solid 1px var(--equicharts-popover-background-color);
   &:hover {
     background-color: #f0f0f0;
     border-radius: 6px;
-    background-color: var(--klinecharts-pro-popover-background-color);
+    background-color: var(--equicharts-popover-background-color);
   }
 }
