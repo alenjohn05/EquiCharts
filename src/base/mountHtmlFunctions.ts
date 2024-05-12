@@ -6,14 +6,14 @@ import { SymbolInfo } from '../types';
 
 export function createPriceUnitElement(): HTMLSpanElement {
   const priceUnitDom = document.createElement('span');
-  priceUnitDom.className = 'klinecharts-pro-price-unit';
+  priceUnitDom.className = 'equicharts-price-unit';
   return priceUnitDom;
 }
 
 export function createButtonsContainer(): HTMLDivElement {
   const buttonsDiv = document.createElement('div');
   buttonsDiv.style.display = 'flex';
-  buttonsDiv.className = 'klinecharts-pro-price-type';
+  buttonsDiv.className = 'equicharts-price-type';
   return buttonsDiv;
 }
 
@@ -109,7 +109,7 @@ interface WatermarkProps {
 
 export function createWatermark(props: WatermarkProps): HTMLDivElement {
   const watermark = document.createElement('div');
-  watermark.className = 'klinecharts-pro-watermark';
+  watermark.className = 'equicharts-watermark';
   if (utils.isString(props.watermark)) {
     const str = (props.watermark as string).replace(/(^\s*)|(\s*$)/g, '');
     watermark.innerHTML = str;
