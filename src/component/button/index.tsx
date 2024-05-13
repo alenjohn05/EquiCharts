@@ -13,7 +13,7 @@ const Button: ParentComponent<ButtonProps> = (props) => {
   return (
     <button
       style={props.style}
-      class={`klinecharts-pro-button ${props.type ?? 'confirm'} ${props.class ?? ''}`}
+      class={`equicharts-button ${props.type ?? 'confirm'} ${props.class ?? ''}`}
       onClick={props.onClick}
     >
       {props.children}
