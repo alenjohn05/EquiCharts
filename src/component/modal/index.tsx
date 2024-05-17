@@ -11,7 +11,7 @@ export interface ModalProps extends ParentProps {
 
 const Modal: ParentComponent<ModalProps> = (props) => {
   return (
-    <div class="klinecharts-pro-modal">
+    <div class="equicharts-modal">
       <div style={{ width: `${props.width ?? 400}px` }} class="inner">
         <div class="title-container">
           {props.title}
