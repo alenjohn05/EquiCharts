@@ -13,7 +13,7 @@ export interface ListProps extends ParentProps {
 
 const List: ParentComponent<ListProps> = (props) => {
   return (
-    <ul style={props.style} class={`klinecharts-pro-list ${props.class ?? ''}`}>
+    <ul style={props.style} class={`equicharts-list ${props.class ?? ''}`}>
       <Show when={props.loading}>
         <Loading />
       </Show>
