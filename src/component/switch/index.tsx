@@ -11,7 +11,7 @@ const Switch: Component<SwitchProps> = (props) => {
   return (
     <div
       style={props.style}
-      class={`klinecharts-pro-switch ${props.open ? 'turn-on' : 'turn-off'} ${props.class ?? ''}`}
+      class={`equicharts-switch ${props.open ? 'turn-on' : 'turn-off'} ${props.class ?? ''}`}
       onClick={(_) => {
         props.onChange && props.onChange();
       }}
