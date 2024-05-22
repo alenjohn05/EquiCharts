@@ -6,7 +6,7 @@
   width: @drawing-bar-width;
   height: 100%;
   box-sizing: border-box;
-  border-right: solid 1px var(--klinecharts-pro-border-color);
+  border-right: solid 1px var(--equicharts-border-color);
   .item {
     display: flex;
     flex-direction: row;
@@ -16,21 +16,21 @@
     width: 100%;
     margin-top: @gap;
     cursor: pointer;
-    color: var(--klinecharts-pro-text-color);
-    fill: var(--klinecharts-pro-text-color);
-    stroke: var(--klinecharts-pro-text-color);
+    color: var(--equicharts-text-color);
+    fill: var(--equicharts-text-color);
+    stroke: var(--equicharts-text-color);
     .icon-overlay {
       width: 28px;
       height: 28px;
       border-radius: 2px;
       transition: all 0.2s;
       &:hover {
-        background-color: var(--klinecharts-pro-hover-background-color);
+        background-color: var(--equicharts-hover-background-color);
       }
       &.selected {
-        background-color: var(--klinecharts-pro-selected-color)!important;
-        fill: var(--klinecharts-pro-primary-color);
-        stroke: var(--klinecharts-pro-primary-color);
+        background-color: var(--equicharts-selected-color)!important;
+        fill: var(--equicharts-primary-color);
+        stroke: var(--equicharts-primary-color);
       }
     }
     .icon-arrow {
@@ -57,7 +57,7 @@
         }
       }
       &:hover {
-        background-color: var(--klinecharts-pro-hover-background-color);
+        background-color: var(--equicharts-hover-background-color);
       }
     }
 
@@ -67,7 +67,7 @@
       top: 0;
       white-space: nowrap;
       left: calc(100% + 1px);
-      background-color: var(--klinecharts-pro-popover-background-color);
+      background-color: var(--equicharts-popover-background-color);
       z-index: 99;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       min-height: auto;
@@ -94,7 +94,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    background-color: var(--klinecharts-pro-border-color);
+    background-color: var(--equicharts-border-color);
     margin-top: @gap;
   }
 }
