@@ -80,7 +80,7 @@ const DrawingBar: Component<DrawingBarProps> = (props) => {
   const modes = createMemo(() => createMagnetOptions(props.locale));
 
   return (
-    <div class="klinecharts-pro-drawing-bar">
+    <div class="equicharts-drawing-bar">
       {overlays().map((item) => (
         <div
           class="item"
