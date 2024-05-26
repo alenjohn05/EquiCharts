@@ -26,7 +26,7 @@ const IndicatorModal: Component<IndicatorModalProps> = (props) => {
       width={400}
       onClose={props.onClose}
     >
-      <List class="klinecharts-pro-indicator-modal-list">
+      <List class="equicharts-indicator-modal-list">
         <li class="title">{i18n('main_indicator', props.locale)}</li>
         {['MA', 'EMA', 'SMA', 'BOLL', 'SAR', 'BBI', 'candle_volume'].map(
           (name) => {
