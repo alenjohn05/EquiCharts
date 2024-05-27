@@ -54,7 +54,7 @@ const IndicatorSettingModal: Component<IndicatorSettingModalProps> = (
       ]}
       onClose={props.onClose}
     >
-      <div class="klinecharts-pro-indicator-setting-modal-content">
+      <div class="equicharts-indicator-setting-modal-content">
         {getConfig(props.params.indicatorName).map((d, i) => {
           return (
             <>
