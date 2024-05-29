@@ -73,9 +73,9 @@ const PeriodBar: Component<PeriodBarProps> = (props) => {
       ref={(el) => {
         ref = el;
       }}
-      class="klinecharts-pro-period-bar-main"
+      class="equicharts-period-bar-main"
     >
-      <div class="klinecharts-pro-period-bar">
+      <div class="equicharts-period-bar">
         <div class="menu-container">
           <svg
             class={props.spread ? '' : 'rotate'}
@@ -158,7 +158,7 @@ const PeriodBar: Component<PeriodBarProps> = (props) => {
           </span>
         </div>
       </div>
-      <div class="klinecharts-pro-period-bar-setting">
+      <div class="equicharts-period-bar-setting">
         <Tooltip top_length={32} text={i18n('Recent Updates', props.locale)}>
           <div class="item tools" onClick={props.onSettingClick}>
             <svg viewBox="0 0 24 24" fill="#FCB900">
