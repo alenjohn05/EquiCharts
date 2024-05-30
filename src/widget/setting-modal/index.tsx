@@ -50,7 +50,7 @@ const SettingModal: Component<SettingModalProps> = (props) => {
       ]}
       onClose={props.onClose}
     >
-      <div class="klinecharts-pro-setting-modal-content">
+      <div class="equicharts-setting-modal-content">
         <For each={options()}>
           {(option) => {
             let component;
