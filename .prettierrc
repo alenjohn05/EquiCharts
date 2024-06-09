@@ -1,0 +1,13 @@
+{
+  "charset": "utf-8",
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "insertFinalNewline": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "spaceBeforeFunctionParen": true,
+  "semi": true
+}
