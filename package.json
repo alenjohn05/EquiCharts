@@ -5,12 +5,12 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
-  "unpkg": "./dist/umd/trendview.min.js",
+  "unpkg": "./dist/umd/equicharts.min.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/trendview.es.js",
-      "require": "./dist/trendview.umd.js"
+      "import": "./dist/equicharts.es.js",
+      "require": "./dist/equicharts.umd.js"
     }
   },
   "scripts": {

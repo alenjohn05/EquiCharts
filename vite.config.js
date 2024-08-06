@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/core/index.ts"),
-      name: "trendview",
-      fileName: (format) => `trendview.${format}.js`
+      name: "equicharts",
+      fileName: (format) => `equicharts.${format}.js`
     },
     rollupOptions: {
       output: { format: ["umd", "esm","cjs"] }

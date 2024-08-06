@@ -1,6 +1,6 @@
-# TrendView
+# Equicharts
 
-TrendView is a high-performance, open-source stock charting library built entirely with pure TypeScript. Designed with speed and efficiency in mind, it operates with no external dependencies, ensuring fast rendering and smooth interactions for your financial data visualizations.
+Equicharts is a high-performance, open-source stock charting library built entirely with pure TypeScript. Designed with speed and efficiency in mind, it operates with no external dependencies, ensuring fast rendering and smooth interactions for your financial data visualizations.
 
 This library is inspired by and uses [kline charts](https://github.com/liihuu/klineChart), which is licensed under the Apache License 2.0.
 
