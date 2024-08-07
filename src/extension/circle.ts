@@ -1,7 +1,6 @@
- 
-import { OverlayTemplate } from  'equicharts'
+import { OverlayTemplate } from 'equicharts';
 
-import { getDistance } from './utils'
+import { getDistance } from './utils';
 
 const circle: OverlayTemplate = {
   name: 'circle',
@@ -11,23 +10,23 @@ const circle: OverlayTemplate = {
   needDefaultYAxisFigure: true,
   styles: {
     circle: {
-      color: 'rgba(22, 119, 255, 0.15)'
-    }
+      color: 'rgba(22, 119, 255, 0.15)',
+    },
   },
   createPointFigures: ({ coordinates }) => {
     if (coordinates.length > 1) {
-      const radius = getDistance(coordinates[0], coordinates[1])
+      const radius = getDistance(coordinates[0], coordinates[1]);
       return {
         type: 'circle',
         attrs: {
           ...coordinates[0],
-          r: radius
+          r: radius,
         },
-        styles: { style: 'stroke_fill' }
-      }
+        styles: { style: 'stroke_fill' },
+      };
     }
-    return []
-  }
-}
+    return [];
+  },
+};
 
-export default circle
+export default circle;
