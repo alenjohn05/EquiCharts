@@ -1,4 +1,5 @@
-import { OverlayTemplate, LineAttrs, TextAttrs } from '../../core/dist';
+
+import { OverlayTemplate, LineAttrs, TextAttrs } from 'equicharts';
 
 const fibonacciSegment: OverlayTemplate = {
   name: 'fibonacciSegment',

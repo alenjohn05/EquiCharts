@@ -4,7 +4,7 @@ import {
   TextAttrs,
   LineAttrs,
   Coordinate,
-} from '../../core/dist';
+} from 'equicharts';
 import { formatThousands } from './utils';
 
 const fibonacciDiagonal: OverlayTemplate = {

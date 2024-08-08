@@ -1,6 +1,6 @@
 import { render } from 'solid-js/web';
 
-import { utils, Nullable, DeepPartial, Styles } from '../core/dist';
+import { utils, Nullable, DeepPartial, Styles } from 'equicharts';
 
 import ChartProComponent from './ChartProComponent';
 

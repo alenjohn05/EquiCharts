@@ -1,4 +1,4 @@
-import { OverlayTemplate, utils } from '../../core/dist';
+import { OverlayTemplate, utils } from 'equicharts';
 
 import { getRotateCoordinate } from './utils';
 

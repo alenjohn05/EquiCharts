@@ -1,5 +1,5 @@
 import { Component, createEffect, For, createSignal } from 'solid-js';
-import { Styles, utils, DeepPartial } from '../../../core/dist';
+import { Styles, utils, DeepPartial } from 'equicharts';
 
 import lodashSet from 'lodash/set';
 

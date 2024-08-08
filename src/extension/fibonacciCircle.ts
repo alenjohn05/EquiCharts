@@ -1,4 +1,4 @@
-import { OverlayTemplate, CircleAttrs, TextAttrs } from '../../core/dist';
+import { OverlayTemplate, CircleAttrs, TextAttrs } from 'equicharts';
 
 const fibonacciCircle: OverlayTemplate = {
   name: 'fibonacciCircle',

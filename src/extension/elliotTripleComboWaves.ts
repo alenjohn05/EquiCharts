@@ -1,4 +1,5 @@
-import { OverlayTemplate, Coordinate } from '../../core/dist';
+
+import { OverlayTemplate, Coordinate } from 'equicharts';
 
 const elliotTripleComboWaves: OverlayTemplate = {
   name: 'elliotTripleComboWaves',

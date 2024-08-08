@@ -6,7 +6,7 @@ import i18n from '../../../i18n';
 import candle_up_stroke from './candle_up_stroke';
 import candle_down_stroke from './candle_down_stroke';
 import candle_stroke from './candle_stroke';
-import { CandleType } from '../../../../core/dist';
+import { CandleType } from 'equicharts';
 import line from './line';
 import line_marks from './line_marks';
 import step_line from './step_line';

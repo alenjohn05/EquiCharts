@@ -1,4 +1,4 @@
-import { OverlayTemplate } from '../../core/dist';
+import { OverlayTemplate } from 'equicharts';
 
 import { getDistance } from './utils';
 

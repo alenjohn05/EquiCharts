@@ -13,7 +13,7 @@ import i18n from '../../i18n';
 import Tooltip from '../../component/hoverTooltip';
 import { List } from '../../component';
 import { Icon, getCandleOptions } from './candle_icons';
-import { DeepPartial, Styles } from '../../../core/dist';
+import { DeepPartial, Styles } from 'equicharts';
 import { getOptions } from '../setting-modal/data';
 
 export interface PeriodBarProps {

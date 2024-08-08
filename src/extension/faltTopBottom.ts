@@ -1,4 +1,4 @@
-import { PolygonAttrs, LineAttrs, OverlayTemplate } from '../../core/dist';
+import { PolygonAttrs, LineAttrs, OverlayTemplate } from 'equicharts';
 
 const faltTopBottom: OverlayTemplate = {
   name: 'faltTopBottom',

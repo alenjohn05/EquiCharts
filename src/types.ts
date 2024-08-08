@@ -1,4 +1,4 @@
-import { KLineData, Styles, DeepPartial } from '../core/dist';
+import { KLineData, Styles, DeepPartial } from 'equicharts';
 
 export interface SymbolInfo {
   ticker: string;

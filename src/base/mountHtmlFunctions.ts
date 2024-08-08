@@ -1,6 +1,6 @@
 // priceUnitModule.ts
 
-import { DeepPartial, Styles, YAxisType, utils } from '../../core/dist';
+import { DeepPartial, Styles, YAxisType, utils } from 'equicharts';
 import { Setter } from 'solid-js';
 import { SymbolInfo } from '../types';
 

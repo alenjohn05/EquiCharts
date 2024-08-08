@@ -23,7 +23,7 @@ import {
   DomPosition,
   DeepPartial,
   registerOverlay,
-} from '../core/dist';
+} from 'equicharts';
 import lodashSet from 'lodash/set';
 import lodashClone from 'lodash/cloneDeep';
 import { SelectDataSourceItem, Loading } from './component';

@@ -1,4 +1,5 @@
-import { OverlayTemplate, utils, registerFigure } from '../../core/dist';
+
+import { OverlayTemplate, utils, registerFigure } from 'equicharts';
 
 import { getDistance, getRotateCoordinate, getRayLine } from './utils';
 
