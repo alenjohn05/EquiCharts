@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build-main": "tsc && vite build",
+    "build-dts": "dts-bundle-generator --no-banner true --umd-module-name equichartswidget -o dist/index.d.ts src/index.ts",
+    "build": "npm run build-main && npm run build-dts",
     "preview": "vite preview",
     "build:core": "npm run build --workspace equicharts",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
