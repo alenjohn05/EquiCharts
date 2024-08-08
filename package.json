@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "rollup": "^4.20.0",
     "solid-js": "^1.8.19"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.7",
     "equicharts": "workspaces/equicharts",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",

@@ -1,4 +1,4 @@
-import { KLineData } from 'equicharts';
+import { TViewData } from 'equicharts';
 
 import {
   Datafeed,
@@ -41,7 +41,7 @@ export default class DefaultDatafeed implements Datafeed {
     period: Period,
     from: number,
     to: number,
-  ): Promise<KLineData[]> {
+  ): Promise<TViewData[]> {
     // const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol.ticker}/range/${period.multiplier}/${period.timespan}/${from}/${to}?apiKey=${this._apiKey}`)
     const result = data;
     // const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol.ticker}/range/${period.multiplier}/${period.timespan}/${from}/${to}?apiKey=${this._apiKey}`)
