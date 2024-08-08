@@ -13,10 +13,11 @@
     "solid-js": "^1.8.19"
   },
   "devDependencies": {
+    "equicharts": "workspaces/equicharts",
+    "less": "^4.2.0",
     "typescript": "^5.5.3",
     "vite": "^5.4.0",
-    "vite-plugin-solid": "^2.10.2",
-    "equicharts": "workspaces/equicharts"
+    "vite-plugin-solid": "^2.10.2"
   },
   "workspaces": [
     "equicharts"
