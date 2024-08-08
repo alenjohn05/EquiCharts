@@ -1,0 +1,59 @@
+const handleMoveToATimeStamp = (timeData: number) => {
+  widget?.scrollToTimestamp(addPeriodsToTimestamp(period(), timeData, 100), 2)
+  widget?.setYScrolling(yScrolling())
+  // const tooltip = document.getElementById('date-tooltip')
+  registerOverlay({
+    name: 'priceLine2',
+    totalStep: 2,
+    needDefaultPointFigure: false,
+    needDefaultXAxisFigure: false,
+    needDefaultYAxisFigure: false,
+    styles: {
+      line: { style: LineType.Dashed }
+    },
+    createPointFigures: ({ coordinates, bounding, precision, overlay, thousandsSeparator, decimalFoldThreshold, yAxis, xAxis }: OverlayCreateFiguresCallbackParams) => {
+      if (!xAxis || !yAxis || !timeData) return []
+      const x = xAxis?.convertTimestampToPixel(timeData)
+      const data: Nullable<KLineData> | undefined = xAxis?.convertTimestampToData(timeData)
+      if (data) {
+        const y = yAxis?.convertToPixel(data.high)
+        const startX = x
+        const startY = y - 6
+        const lineEndY = startY - 50
+        const arrowEndY = lineEndY - 5
+        // if (tooltip) {
+        //   tooltip.style.left = `${x + 10}px`
+        //   tooltip.style.top = `${y + 50}px`
+        //   tooltip.innerHTML = formatDate(timeData)
+        //   tooltip.style.display = 'block'
+        // }
+        return [
+          {
+            type: 'line',
+            attrs: { coordinates: [{ x: startX, y: startY }, { x: startX, y: lineEndY }] },
+            ignoreEvent: true
+          },
+          {
+            type: 'polygon',
+            attrs: { coordinates: [{ x: startX, y: lineEndY }, { x: startX - 4, y: arrowEndY }, { x: startX + 4, y: arrowEndY }] },
+            ignoreEvent: true
+          },
+          {
+            type: 'text',
+            attrs: { x: startX, y: arrowEndY, text: formatDate(timeData), align: 'center', baseline: 'bottom' },
+            ignoreEvent: true
+          }
+        ]
+      }
+      return []
+    }
+  })
+  widget?.createOverlay('priceLine2', 'candle_pane')
+  function sayHello() {
+    widget?.removeIndicator('candle_pane', 'tick')
+    if (tooltip) {
+      tooltip.style.display = "none";
+    }
+  }
+  setTimeout(sayHello, 2000);
+}

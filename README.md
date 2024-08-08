@@ -1,17 +1,28 @@
-# Equicharts
+## Usage
 
-Equicharts is a high-performance, open-source stock charting library built entirely with pure TypeScript. Designed with speed and efficiency in mind, it operates with no external dependencies, ensuring fast rendering and smooth interactions for your financial data visualizations.
+```bash
+$ npm install # or pnpm install or yarn install
+```
 
-This library is inspired by and uses [kline charts](https://github.com/liihuu/klineChart), which is licensed under the Apache License 2.0.
+### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
-## Features
+## Available Scripts
 
-- **Pure TypeScript:** Written from the ground up in pure TypeScript for type safety and modern JavaScript compatibility.
-- **No Dependencies:** Zero external dependencies mean fewer security risks and optimal performance.
-- **High Performance:** Efficient rendering and smooth interactions even with large datasets.
-- **Customizable Charts:** Easily customizable chart types including candlestick, line, bar, and more.
-- **Interactive Tools:** A suite of interactive tools for detailed analysis, including zoom, pan, and annotation capabilities.
-- **Responsive Design:** Adaptive layout for seamless use across devices and screen sizes.
-- **Extensible Architecture:** Designed for easy integration and extension to fit your specific needs.
+In the project directory, you can run:
 
-# EquiCharts
+### `npm run dev`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.<br>
+It correctly bundles Solid in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+## Deployment
+
+Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)

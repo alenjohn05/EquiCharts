@@ -1,0 +1,65 @@
+@import (reference) "../../base.less";
+
+@border-color: var(--klinecharts-pro-border-color);
+@text-color: var(--klinecharts-pro-text-color);
+@container-width: 80px;
+
+.container-styles() {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.@{prefix-cls}-footer-container {
+  .container-styles();
+  justify-content: flex-start;
+}
+
+.@{prefix-cls}-footer-container-start {
+  .container-styles();
+  justify-content: center;
+  border-right: solid 1px @border-color;
+  width: @container-width;
+}
+
+.@{prefix-cls}-footer-container-clock {
+  .container-styles();
+  justify-content: center;
+  width: @container-width;
+  font-size: 12px;
+  padding: 10px
+}
+.@{prefix-cls}-footer-container-timezone {
+  .container-styles();
+  justify-content: center;
+  width: @container-width + 30px;
+  font-size: 12px;
+  cursor: pointer;
+  border-right: solid 1px @border-color;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  &:hover {
+    background-color: #313131;
+  }
+}
+
+.@{prefix-cls}-footer-container-moveto {
+  .container-styles();
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  border-right: solid 1px @border-color;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: @text-color;
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: @text-color;
+  }
+  &:hover {
+    background-color: #313131;
+  }
+}

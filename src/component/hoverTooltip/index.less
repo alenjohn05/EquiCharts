@@ -1,0 +1,30 @@
+@import (reference) '../../base.less';
+
+.@{prefix-cls}-tooltip-main {
+  position: relative;
+  display: inline-block;
+
+  .tooltip {
+    position: absolute;
+    left: 50%;
+    font-size: 14px;
+    transform: translateX(-50%);
+    background-color: #282828;
+    color: var(--klinecharts-pro-tooltip-color-dark);
+    text-align: center;
+    padding: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+    top: 125%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  &:hover .tooltip {
+    opacity: 1;
+  }
+}

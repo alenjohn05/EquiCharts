@@ -1,0 +1,26 @@
+@import (reference) '../../base.less';
+
+.@{prefix-cls}-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  width: 90px;
+  height: 36px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: solid 1px var(--klinecharts-pro-primary-color);
+  cursor: pointer;
+  background-color: transparent;
+  margin-left: 20px;
+  box-sizing: border-box;
+  &.confirm {
+    color: #e5e5e5;
+    background-color: var(--klinecharts-pro-primary-color);
+  }
+  &.cancel {
+    color: var(--klinecharts-pro-primary-color);
+    border: solid 1px var(--klinecharts-pro-primary-color);
+  }
+}

@@ -125,8 +125,8 @@ export default class CandleBarView extends ChildrenView {
               if (volume !== undefined) {
                 width = Math.round(
                   -6 +
-                  ((volume - maxMin[1]) * (6 - -0.4)) /
-                  (maxMin[0] - maxMin[1]),
+                    ((volume - maxMin[1]) * (6 - -0.4)) /
+                      (maxMin[0] - maxMin[1]),
                 );
               }
               rects = this._createVolumeCandleBar(

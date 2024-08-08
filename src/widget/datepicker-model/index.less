@@ -1,0 +1,109 @@
+@import (reference) '../../base.less';
+
+.datepicker {
+  font-family: Arial, sans-serif;
+  background-color: inherit;
+  color: #ecf0f1;
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: inherit;
+    text-transform: uppercase;
+
+   
+  }
+
+  &-nav {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  &-current {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+  
+    &:hover {
+      background-color:  var(--klinecharts-pro-border-color);
+      border-radius: 6px;
+    }
+  }
+
+  &-body {
+    padding: 10px;
+  }
+
+  &-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    border-bottom: solid 1px var(--klinecharts-pro-border-color);
+    
+  }
+
+  &-weekday {
+    padding: 5px;
+  }
+
+  &-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+
+  &-day {
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      background-color:  var(--klinecharts-pro-border-color);
+    }
+
+    &.empty {
+      visibility: hidden;
+    }
+
+    &.selected {
+      background-color: #e74c3c;
+    }
+
+    &.future {
+      color: #686868;
+      cursor: not-allowed;
+    }
+  }
+
+  &-months,
+  &-years {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  &-month,
+  &-year {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      background-color:  var(--klinecharts-pro-border-color);
+    }
+  }
+}
