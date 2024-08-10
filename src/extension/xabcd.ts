@@ -1,4 +1,3 @@
-
 import { OverlayTemplate, PolygonAttrs, LineAttrs } from 'equicharts';
 
 const xabcd: OverlayTemplate = {

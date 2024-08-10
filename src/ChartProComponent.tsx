@@ -302,13 +302,13 @@ const ChartProComponent: Component<ChartProComponentProps> = (props) => {
         const p = period();
         const [to] = adjustFromTo(p, timestamp!, 1);
         const [from] = adjustFromTo(p, to, 500);
-        const kLineDataList = await props.datafeed.getHistoryKLineData(
+        const TViewDataList = await props.datafeed.getHistoryTViewData(
           symbol(),
           p,
           from,
           to,
         );
-        widget?.applyMoreData(kLineDataList, kLineDataList.length > 0);
+        widget?.applyMoreData(TViewDataList, TViewDataList.length > 0);
         loading = false;
       };
       get();
@@ -401,13 +401,13 @@ const ChartProComponent: Component<ChartProComponentProps> = (props) => {
       setLoadingVisible(true);
       const get = async () => {
         const [from, to] = adjustFromTo(p, new Date().getTime(), 500);
-        const kLineDataList = await props.datafeed.getHistoryKLineData(
+        const TViewDataList = await props.datafeed.getHistoryTViewData(
           s,
           p,
           from,
           to,
         );
-        widget?.applyNewData(kLineDataList, kLineDataList.length > 0);
+        widget?.applyNewData(TViewDataList, TViewDataList.length > 0);
         props.datafeed.subscribe(s, p, (data) => {
           widget?.updateData(data);
         });

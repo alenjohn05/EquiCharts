@@ -14,7 +14,7 @@ const handleMoveToATimeStamp = (timeData: number) => {
     createPointFigures: ({ coordinates, bounding, precision, overlay, thousandsSeparator, decimalFoldThreshold, yAxis, xAxis }: OverlayCreateFiguresCallbackParams) => {
       if (!xAxis || !yAxis || !timeData) return []
       const x = xAxis?.convertTimestampToPixel(timeData)
-      const data: Nullable<KLineData> | undefined = xAxis?.convertTimestampToData(timeData)
+      const data: Nullable<TViewData> | undefined = xAxis?.convertTimestampToData(timeData)
       if (data) {
         const y = yAxis?.convertToPixel(data.high)
         const startX = x

@@ -1,4 +1,4 @@
-import { KLineData, Styles, DeepPartial } from 'equicharts';
+import { TViewData, Styles, DeepPartial } from 'equicharts';
 
 export interface SymbolInfo {
   ticker: string;
@@ -19,16 +19,16 @@ export interface Period {
   text: string;
 }
 
-export type DatafeedSubscribeCallback = (data: KLineData) => void;
+export type DatafeedSubscribeCallback = (data: TViewData) => void;
 
 export interface Datafeed {
   searchSymbols(search?: string): Promise<SymbolInfo[]>;
-  getHistoryKLineData(
+  getHistoryTViewData(
     symbol: SymbolInfo,
     period: Period,
     from: number,
     to: number,
-  ): Promise<KLineData[]>;
+  ): Promise<TViewData[]>;
   subscribe(
     symbol: SymbolInfo,
     period: Period,

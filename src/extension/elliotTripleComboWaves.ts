@@ -1,4 +1,3 @@
-
 import { OverlayTemplate, Coordinate } from 'equicharts';
 
 const elliotTripleComboWaves: OverlayTemplate = {

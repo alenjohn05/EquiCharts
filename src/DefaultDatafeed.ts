@@ -36,7 +36,7 @@ export default class DefaultDatafeed implements Datafeed {
     }));
   }
 
-  async getHistoryKLineData(
+  async getHistoryTViewData(
     symbol: SymbolInfo,
     period: Period,
     from: number,

@@ -1,4 +1,3 @@
-
 import { OverlayTemplate, LineAttrs, TextAttrs } from 'equicharts';
 
 const fibonacciSegment: OverlayTemplate = {

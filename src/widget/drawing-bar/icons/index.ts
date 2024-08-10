@@ -204,6 +204,6 @@ interface IconProps {
   name: string;
 }
 
-// @ts-expect-error
 export const Icon: Component<IconProps> = (props) =>
+  // @ts-expect-error
   mapping[props.name](props.class);

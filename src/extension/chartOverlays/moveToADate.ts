@@ -1,5 +1,5 @@
 import {
-  KLineData,
+  TViewData,
   LineType,
   Nullable,
   OverlayCreateFiguresCallbackParams,
@@ -31,8 +31,8 @@ export function getMoveToADateOverlay(timeData: number) {
       if (!xAxis || !yAxis || !timeData) return [];
       // @ts-ignore
       const x = xAxis?.convertTimestampToPixel(timeData);
-      // @ts-ignore
-      const data: Nullable<KLineData> | undefined =
+      const data: Nullable<TViewData> | undefined =
+        // @ts-ignore
         xAxis?.convertTimestampToData(timeData);
       if (data) {
         const y = yAxis?.convertToPixel(data.high);

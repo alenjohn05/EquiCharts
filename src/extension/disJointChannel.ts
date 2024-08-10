@@ -3,7 +3,7 @@ import {
   Coordinate,
   PolygonAttrs,
   LineAttrs,
-} from 'equicharts ';
+} from 'equicharts';
 
 let height = 0;
 

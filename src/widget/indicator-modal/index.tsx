@@ -84,9 +84,9 @@ const IndicatorModal: Component<IndicatorModalProps> = (props) => {
             <li
               class="row"
               onClick={(_) => {
-                // @ts-expect-error
                 props.onSubIndicatorChange({
                   name,
+                  // @ts-expect-error
                   paneId: props.subIndicators[name] ?? '',
                   added: !checked,
                 });

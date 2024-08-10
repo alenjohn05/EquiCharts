@@ -1,4 +1,3 @@
-
 import { OverlayTemplate } from 'equicharts';
 
 const threeWaves: OverlayTemplate = {
