@@ -2,7 +2,7 @@
 
 Equicharts is a high-performance, open-source stock charting library built entirely with pure TypeScript. Designed with speed and efficiency in mind, it operates with no external dependencies, ensuring fast rendering and smooth interactions for your financial data visualizations.
 
-This library is inspired by and uses [kline charts](https://github.com/liihuu/klineChart), which is licensed under the Apache License 2.0.
+This library uses [kline charts](https://github.com/liihuu/klineChart) as core with lots of customizations, which is licensed under the Apache License 2.0.
 
 ## Features
 
