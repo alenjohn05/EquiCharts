@@ -44,8 +44,10 @@ export default class DefaultDatafeed implements Datafeed {
   ): Promise<TViewData[]> {
     // const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol.ticker}/range/${period.multiplier}/${period.timespan}/${from}/${to}?apiKey=${this._apiKey}`)
     // const result = data;
-    const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${symbol.ticker}/range/${period.multiplier}/${period.timespan}/${from}/${to}?apiKey=${this._apiKey}`)
-    const result = await response.json()
+    const response = await fetch(
+      `https://api.polygon.io/v2/aggs/ticker/${symbol.ticker}/range/${period.multiplier}/${period.timespan}/${from}/${to}?apiKey=${this._apiKey}`,
+    );
+    const result = await response.json();
     // console.log(result.results)
     return await (result.results || []).map((data: any) => ({
       timestamp: data.t,
