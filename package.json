@@ -39,16 +39,14 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build-main && npm run build-dts",
+    "build-main": "tsc && vite build",
+    "build": "npm run build-main",
     "build:core": "npm run build --workspace equicharts",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
   },
   "dependencies": {
     "lodash": "^4.17.21",
     "solid-js": "^1.8.19"
-  },
-  "engines": {
-    "node": ">=0.10.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
