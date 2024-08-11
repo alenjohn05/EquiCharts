@@ -17,36 +17,6 @@ This library uses [kline charts](https://github.com/liihuu/klineChart) as its co
 
 ## Charting Platform
 
----
-
-### Candlestick Chart with Indicators
-<p align="center">
-  <img src="static/images/with_indicators.png" alt="Candlestick Chart with Indicators" width="400"/>
-</p>
-
-### Heikin-Ashi Chart with Overlays
-<p align="center">
-  <img src="static/images/heiken.png" alt="Heikin-Ashi Chart" width="400"/>
-</p>
-
-### Line Chart with Volume Indicator
-<p align="center">
-  <img src="static/images/chart-widget.png" alt="Line Chart with Volume Indicator" width="400"/>
-</p>
-
-### Area Chart with Trendlines
-<p align="center">
-  <img src="static/images/with_drawing_tools.png" alt="Area Chart with Trendlines" width="400"/>
-</p>
-
-### Customizable Drawing Tools
-<p align="center">
-  <img src="static/images/price_measure.png" alt="Drawing Tools" width="400"/>
-</p>
-
----
-
-### Thumbnail Gallery
 
 <p align="center">
   <img src="static/images/heiken.png" alt="Candlestick Chart" width="400"/>
