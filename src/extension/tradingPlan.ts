@@ -25,7 +25,7 @@ const tradingPlan: OverlayTemplate = {
               { x: coordinates[0].x, y: coordinates[2].y },
             ],
           },
-          styles: { style: 'fill', color: '#f928554f' },
+          styles: { style: 'fill', color: '#DE46464f' },
         };
         if (n == 3) {
           return [bottomRect];

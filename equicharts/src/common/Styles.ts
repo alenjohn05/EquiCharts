@@ -462,10 +462,10 @@ export interface Styles {
   overlay: OverlayStyle;
 }
 
-const red = '#F23645';
-const alphaRed = 'rgba(249, 40, 85, .7)';
-const green = '#2DC08E';
-const alphaGreen = 'rgba(45, 192, 142, .7)';
+const red = '#DE4646';
+const alphaRed = '#DE464696';
+const green = '#399068';
+const alphaGreen = '#39906896';
 const grey = '#888888';
 const white = '#FFFFFF';
 const blue = '#1677FF';
@@ -516,8 +516,8 @@ function getDefaultCandleStyle(): CandleStyle {
       upBorderColor: green,
       downBorderColor: red,
       noChangeBorderColor: grey,
-      upWickColor: green,
-      downWickColor: red,
+      upWickColor: alphaGreen,
+      downWickColor: alphaRed,
       noChangeWickColor: grey,
     },
     area: {

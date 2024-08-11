@@ -65,8 +65,8 @@ export function logError(
 ): void {
   log(
     '%c😟 tvlinecharts error%c %s%s%s',
-    'padding:3px 4px;border-radius:2px;color:#ffffff;background-color:#F92855;',
-    'color:#F92855;',
+    'padding:3px 4px;border-radius:2px;color:#ffffff;background-color:#DE4646;',
+    'color:#DE4646;',
     api,
     invalidParam,
     append ?? '',
