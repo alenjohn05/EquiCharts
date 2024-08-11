@@ -13,3 +13,36 @@ This library is inspired by and uses [kline charts](https://github.com/liihuu/kl
 - **Interactive Tools:** A suite of interactive tools for detailed analysis, including zoom, pan, and annotation capabilities.
 - **Responsive Design:** Adaptive layout for seamless use across devices and screen sizes.
 - **Extensible Architecture:** Designed for easy integration and extension to fit your specific needs.
+
+# Charting Platform Gallery
+
+Welcome to the gallery showcasing various features of our charting platform, TrendView.
+
+---
+
+### Feature 1: Candlestick Chart with Indicators
+![Candlestick Chart with Indicators](static/images/with_indicators.png)
+
+### Feature 2: Heikin-Ashi Chart with Overlays
+![Heikin-Ashi Chart](static/images/heiken.png)
+
+### Feature 3: Line Chart with Volume Indicator
+![Line Chart with Volume Indicator](static/images/chart-widget.png)
+
+### Feature 4: Area Chart with Trendlines
+![Area Chart with Trendlines](static/images/with_drawing_tools.png)
+
+### Feature 5: Customizable Drawing Tools
+![Drawing Tools](static/images/price_measure.png)
+
+---
+
+### Thumbnail Gallery
+
+<p align="center">
+  <img src="static/images/heiken.png" alt="Candlestick Chart" width="200"/>
+  <img src="static/images/area-chart.png" alt="Heikin-Ashi Chart" width="200"/>
+  <img src="static/images/ohlc.png" alt="Line Chart with Volume Indicator" width="200"/>
+  <img src="static/images/openhigh.png" alt="Area Chart with Trendlines" width="200"/>
+  <img src="static/images/price-dots.png" alt="Drawing Tools" width="200"/>
+</p>

@@ -172,16 +172,19 @@
   position: absolute;
   z-index: 1000;
   font-size: 18px;
-  width: 310px;
+  min-width: 310px;
   height: 25px;
   margin-left: 10px;
-  margin-top: 5px;
-  padding-bottom: 2px;
   padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
   border-radius: 6px;
   transition: background-color 0.3s ease;
   cursor: pointer;
   border: solid 1px var(--equicharts-popover-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   &:hover {
     background-color: #f0f0f0;
     border-radius: 6px;
