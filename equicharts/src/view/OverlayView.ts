@@ -531,20 +531,22 @@ export default class OverlayView<C extends Axis = YAxis> extends View<C> {
       const dataIndex = xAxis.convertFromPixel(coordinate.x);
       const timestamp =
         timeScaleStore.dataIndexToTimestamp(dataIndex) ?? undefined;
-      const tvlines = chart.getChartStore().getDataList();
-      if (timestamp === undefined) {
-        const index =
-          dataIndex < 0
-            ? 0
-            : dataIndex > tvlines.length - 1
-              ? tvlines.length - 1
-              : dataIndex;
-        point.timestamp = tvlines[index].timestamp;
-        point.dataIndex = index;
-      } else {
-        point.dataIndex = dataIndex;
-        point.timestamp = timestamp;
-      }
+      // const tvlines = chart.getChartStore().getDataList();
+      point.dataIndex = dataIndex;
+      point.timestamp = timestamp;
+      // if (timestamp === undefined) {  Remove Drawing from from last candles of the Data
+      //   const index =
+      //     dataIndex < 0  
+      //       ? 0
+      //       : dataIndex > tvlines.length - 1
+      //         ? tvlines.length - 1
+      //         : dataIndex;
+      //   point.timestamp = tvlines[index].timestamp;
+      //   point.dataIndex = index;
+      // } else {
+      //   point.dataIndex = dataIndex;
+      //   point.timestamp = timestamp;
+      // }
     }
     if (this.coordinateToPointValueFlag()) {
       const yAxis = pane.getAxisComponent();

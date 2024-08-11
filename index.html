@@ -1,323 +1,326 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-  </head>
-  <style>
-    body {
-      margin: 0;
-    }
-  </style>
-  <body>
-    <div id="container"></div>
-    <script type="module">
-      import * as kline from '/src/index.ts';
-      let locale = 'en-US';
-      const chart = new kline.ChartMain({
-        container: document.getElementById('container'),
-        locale,
-        watermark: '',
-        symbol: {
-          exchange: 'XNYS',
-          market: 'stocks',
-          name: 'Nvidia Corp',
-          shortName: 'NVDA',
-          ticker: 'NVDA',
-          priceCurrency: 'usd',
-          type: 'CS',
-        },
-        styles: {
-          grid: {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    margin: 0;
+  }
+</style>
+
+<body>
+  <div id="container"></div>
+  <script type="module">
+    import * as kline from '/src/index.ts';
+    let locale = 'en-US';
+    const chart = new kline.ChartMain({
+      container: document.getElementById('container'),
+      locale,
+      watermark: '',
+      symbol: {
+        exchange: 'XNYS',
+        market: 'stocks',
+        name: 'Nvidia Corp',
+        shortName: 'NVDA',
+        ticker: 'NVDA',
+        priceCurrency: 'usd',
+        type: 'CS',
+      },
+      styles: {
+        grid: {
+          show: true,
+          horizontal: {
             show: true,
-            horizontal: {
-              show: true,
-              size: 1,
-              style: 'stroke_fill',
-              dashedValue: [1, 1],
-              color: '#1F1F1F8A',
-            },
-            vertical: {
-              show: true,
-              size: 1,
-              style: 'stroke_fill',
-              dashedValue: [1, 1],
-              color: '#1F1F1F8A',
-            },
-          },
-          candle: {
-            priceMark: {
-              show: true,
-              high: {
-                show: true,
-                color: '#FFFFFF',
-                textMargin: 5,
-                textSize: 10,
-                textFamily: '"Roboto", sans-serif',
-                textWeight: 'normal',
-              },
-              low: {
-                show: true,
-                color: '#FFFFFF',
-                textMargin: 5,
-                textSize: 10,
-                textFamily: '"Roboto", sans-serif',
-                textWeight: 'normal',
-              },
-              last: {
-                show: true,
-                upColor: '#399068',
-                downColor: '#DE4646',
-                noChangeColor: '#1F1F1F8A',
-                line: {
-                  show: true,
-                  style: 'dashed',
-                  dashedValue: [1, 3],
-                  size: 1,
-                },
-                text: {
-                  show: true,
-                  style: 'fill',
-                  size: 12,
-                  paddingLeft: 4,
-                  paddingTop: 4,
-                  paddingRight: 4,
-                  paddingBottom: 4,
-                  borderStyle: 'solid',
-                  borderSize: 0,
-                  borderColor: 'transparent',
-                  borderDashedValue: [2, 2],
-                  color: '#FFFFFF',
-                  family: '"Roboto", sans-serif',
-                  weight: 'normal',
-                  borderRadius: 2,
-                },
-              },
-            },
-            tooltip: {
-              offsetLeft: 4,
-              offsetTop: 6,
-              offsetRight: 4,
-              offsetBottom: 6,
-              showRule: 'always',
-              showType: 'standard',
-              // Custom display, it can be a callback method or an array, when it is a method, it needs to return an array
-              // The child item type of the array is { title, value }
-              // title and value can be strings or objects, and the object type is { text, color }
-              // title or title.text can be an internationalized key,
-              // value or value.text supports string templates
-              // For example: want to display time, opening and closing, configure [{ title: 'time', value: '{time}' }, { title: 'open', value: '{open}' }, { title: ' close', value: '{close}' }]
-              custom: [
-                { title: 'time', value: { text: '{time}', color: '#FCB900' } },
-                { title: 'O ', value: { text: '{open}', color: '#FCB900' } },
-                { title: 'H ', value: { text: '{high}', color: '#FCB900' } },
-                { title: 'L ', value: { text: '{low}', color: '#FCB900' } },
-                { title: 'C ', value: { text: '{close}', color: '#FCB900' } },
-                {
-                  title: 'Vol ',
-                  value: { text: '{volume}', color: '#FCB900' },
-                },
-              ],
-              defaultValue: 'n/a',
-              rect: {
-                position: 'fixed',
-                paddingLeft: 4,
-                paddingRight: 4,
-                paddingTop: 4,
-                paddingBottom: 4,
-                offsetLeft: 4,
-                offsetTop: 4,
-                offsetRight: 4,
-                offsetBottom: 4,
-                borderRadius: 4,
-                borderSize: 1,
-                borderColor: '#2a2e39',
-                color: '#FEFEFE',
-              },
-              text: {
-                size: 10,
-                family: '"Roboto", sans-serif',
-                weight: 'normal',
-                color: '#FFFFFF8A',
-                marginLeft: 1,
-                marginTop: 4,
-                marginRight: 8,
-                marginBottom: 4,
-              },
-              icons: [],
-            },
-          },
-          xAxis: {
-            show: true,
-            size: 'auto',
-            axisLine: {
-              show: true,
-              color: '#1F1F1F8A',
-              size: 1,
-            },
-            tickText: {
-              show: true,
-              color: '#FFFFFF',
-              family: '"Roboto", sans-serif',
-              weight: 'normal',
-              size: 12,
-              marginStart: 4,
-              marginEnd: 4,
-            },
-            tickLine: {
-              show: true,
-              size: 1,
-              length: 3,
-              color: '#1F1F1F8A',
-            },
-          },
-          yAxis: {
-            show: true,
-            size: 'auto',
-            position: 'right',
-            type: 'normal',
-            inside: false,
-            reverse: false,
-            axisLine: {
-              show: true,
-              color: '#1F1F1F8A',
-              size: 1,
-            },
-            tickText: {
-              show: true,
-              color: '#FFFFFF',
-              family: '"Roboto", sans-serif',
-              weight: 'normal',
-              size: 12,
-              marginStart: 4,
-              marginEnd: 4,
-            },
-            tickLine: {
-              show: true,
-              size: 1,
-              length: 1,
-              color: '#1F1F1F8A',
-            },
-          },
-          separator: {
-            size: 3,
+            size: 1,
+            style: 'stroke_fill',
+            dashedValue: [1, 1],
             color: '#1F1F1F8A',
-            fill: true,
-            activeBackgroundColor: '#1F1F1F8A',
           },
-          crosshair: {
+          vertical: {
             show: true,
-            horizontal: {
-              show: true,
-              line: {
-                show: true,
-                // 'solid'|'dashed'
-                style: 'dashed',
-                dashedValue: [6, 6],
-                size: 1,
-                color: '#1F1F1F8A',
-              },
-              text: {
-                show: true,
-                style: 'fill',
-                color: '#FFFFFF',
-                size: 12,
-                family: '"Roboto", sans-serif',
-                weight: 'normal',
-                borderStyle: 'solid',
-                borderDashedValue: [2, 2],
-                borderSize: 1,
-                borderColor: '#1F1F1F8A',
-                borderRadius: 1,
-                paddingLeft: 4,
-                paddingRight: 4,
-                paddingTop: 4,
-                paddingBottom: 4,
-                backgroundColor: '#1F1F1F8A',
-              },
-            },
-            vertical: {
-              show: true,
-              line: {
-                show: true,
-                style: 'dashed',
-                dashedValue: [6, 6],
-                size: 1,
-                color: '#1F1F1F8A',
-              },
-              text: {
-                show: true,
-                style: 'fill',
-                color: '#FFFFFF',
-                size: 12,
-                family: '"Roboto", sans-serif',
-                weight: 'normal',
-                borderStyle: 'solid',
-                borderDashedValue: [2, 2],
-                borderSize: 1,
-                borderColor: '#1F1F1F8A',
-                borderRadius: 1,
-                paddingLeft: 4,
-                paddingRight: 4,
-                paddingTop: 4,
-                paddingBottom: 4,
-                backgroundColor: '#1F1F1F8A',
-              },
-            },
+            size: 1,
+            style: 'stroke_fill',
+            dashedValue: [1, 1],
+            color: '#1F1F1F8A',
           },
-          indicator: {
-            lastValueMark: {
-              show: false,
+        },
+        candle: {
+          priceMark: {
+            show: true,
+            high: {
+              show: true,
+              color: '#FFFFFF',
+              textMargin: 5,
+              textSize: 10,
+              textFamily: '"Roboto", sans-serif',
+              textWeight: 'normal',
+            },
+            low: {
+              show: true,
+              color: '#FFFFFF',
+              textMargin: 5,
+              textSize: 10,
+              textFamily: '"Roboto", sans-serif',
+              textWeight: 'normal',
+            },
+            last: {
+              show: true,
+              upColor: '#399068',
+              downColor: '#DE4646',
+              noChangeColor: '#1F1F1F8A',
+              line: {
+                show: true,
+                style: 'dashed',
+                dashedValue: [1, 3],
+                size: 1,
+              },
               text: {
-                show: false,
+                show: true,
                 style: 'fill',
-                color: '#FFFFFF',
                 size: 12,
-                family: '"Roboto", sans-serif',
-                weight: 'normal',
-                borderStyle: 'solid',
-                borderSize: 1,
-                borderDashedValue: [2, 2],
                 paddingLeft: 4,
                 paddingTop: 4,
                 paddingRight: 4,
                 paddingBottom: 4,
+                borderStyle: 'solid',
+                borderSize: 0,
+                borderColor: 'transparent',
+                borderDashedValue: [2, 2],
+                color: '#FFFFFF',
+                family: '"Roboto", sans-serif',
+                weight: 'normal',
                 borderRadius: 2,
               },
             },
-            tooltip: {
-              offsetLeft: 4,
-              offsetTop: 6,
-              offsetRight: 4,
-              offsetBottom: 6,
-              showRule: 'always',
-              showType: 'standard',
-              showName: true,
-              showParams: true,
-              defaultValue: 'n/a',
-              text: {
-                size: 12,
-                family: '"Roboto", sans-serif',
-                weight: 'normal',
-                color: '#FFFFFF',
-                marginTop: 4,
-                marginRight: 8,
-                marginBottom: 4,
-                marginLeft: 8,
+          },
+          tooltip: {
+            offsetLeft: 4,
+            offsetTop: 6,
+            offsetRight: 4,
+            offsetBottom: 6,
+            showRule: 'always',
+            showType: 'standard',
+            // Custom display, it can be a callback method or an array, when it is a method, it needs to return an array
+            // The child item type of the array is { title, value }
+            // title and value can be strings or objects, and the object type is { text, color }
+            // title or title.text can be an internationalized key,
+            // value or value.text supports string templates
+            // For example: want to display time, opening and closing, configure [{ title: 'time', value: '{time}' }, { title: 'open', value: '{open}' }, { title: ' close', value: '{close}' }]
+            custom: [
+              { title: 'time', value: { text: '{time}', color: '#FCB900' } },
+              { title: 'O ', value: { text: '{open}', color: '#FCB900' } },
+              { title: 'H ', value: { text: '{high}', color: '#FCB900' } },
+              { title: 'L ', value: { text: '{low}', color: '#FCB900' } },
+              { title: 'C ', value: { text: '{close}', color: '#FCB900' } },
+              {
+                title: 'Vol ',
+                value: { text: '{volume}', color: '#FCB900' },
               },
-              icons: [],
+            ],
+            defaultValue: 'n/a',
+            rect: {
+              position: 'fixed',
+              paddingLeft: 4,
+              paddingRight: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              offsetLeft: 4,
+              offsetTop: 4,
+              offsetRight: 4,
+              offsetBottom: 4,
+              borderRadius: 4,
+              borderSize: 1,
+              borderColor: '#2a2e39',
+              color: '#FEFEFE',
+            },
+            text: {
+              size: 10,
+              family: '"Roboto", sans-serif',
+              weight: 'normal',
+              color: '#FFFFFF8A',
+              marginLeft: 1,
+              marginTop: 4,
+              marginRight: 8,
+              marginBottom: 4,
+            },
+            icons: [],
+          },
+        },
+        xAxis: {
+          show: true,
+          size: 'auto',
+          axisLine: {
+            show: true,
+            color: '#1F1F1F8A',
+            size: 1,
+          },
+          tickText: {
+            show: true,
+            color: '#FFFFFF',
+            family: '"Roboto", sans-serif',
+            weight: 'normal',
+            size: 12,
+            marginStart: 4,
+            marginEnd: 4,
+          },
+          tickLine: {
+            show: true,
+            size: 1,
+            length: 3,
+            color: '#1F1F1F8A',
+          },
+        },
+        yAxis: {
+          show: true,
+          size: 'auto',
+          position: 'right',
+          type: 'normal',
+          inside: false,
+          reverse: false,
+          axisLine: {
+            show: true,
+            color: '#1F1F1F8A',
+            size: 1,
+          },
+          tickText: {
+            show: true,
+            color: '#FFFFFF',
+            family: '"Roboto", sans-serif',
+            weight: 'normal',
+            size: 12,
+            marginStart: 4,
+            marginEnd: 4,
+          },
+          tickLine: {
+            show: true,
+            size: 1,
+            length: 1,
+            color: '#1F1F1F8A',
+          },
+        },
+        separator: {
+          size: 3,
+          color: '#1F1F1F8A',
+          fill: true,
+          activeBackgroundColor: '#1F1F1F8A',
+        },
+        crosshair: {
+          show: true,
+          horizontal: {
+            show: true,
+            line: {
+              show: true,
+              // 'solid'|'dashed'
+              style: 'dashed',
+              dashedValue: [6, 6],
+              size: 1,
+              color: '#2a2e39'
+            },
+            text: {
+              show: true,
+              style: 'fill',
+              color: '#FFFFFF',
+              size: 12,
+              family: '"Roboto", sans-serif',
+              weight: 'normal',
+              borderStyle: 'solid',
+              borderDashedValue: [2, 2],
+              borderSize: 1,
+              borderColor: '#2a2e39',
+              borderRadius: 1,
+              paddingLeft: 4,
+              paddingRight: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              backgroundColor: '#2a2e39',
+            },
+          },
+          vertical: {
+            show: true,
+            line: {
+              show: true,
+              style: 'dashed',
+              dashedValue: [6, 6],
+              size: 1,
+              color: '#2a2e39'
+            },
+            text: {
+              show: true,
+              style: 'fill',
+              color: '#FFFFFF',
+              size: 12,
+              family: '"Roboto", sans-serif',
+              weight: 'normal',
+              borderStyle: 'solid',
+              borderDashedValue: [2, 2],
+              borderSize: 1,
+              borderColor: '#2a2e39',
+              borderRadius: 1,
+              paddingLeft: 4,
+              paddingRight: 4,
+              paddingTop: 4,
+              paddingBottom: 4,
+              backgroundColor: '#2a2e39',
             },
           },
         },
-        mainIndicators: ['candle_volume'],
-        theme: 'dark',
-        period: { multiplier: 1, timespan: 'day', text: 'D' },
-        datafeed: new kline.DefaultDatafeed(`R8F_9kQRGZZ87CUuO0bNpybcPWith5RL`),
-      });
-    </script>
-  </body>
+        indicator: {
+          lastValueMark: {
+            show: false,
+            text: {
+              show: false,
+              style: 'fill',
+              color: '#FFFFFF',
+              size: 12,
+              family: '"Roboto", sans-serif',
+              weight: 'normal',
+              borderStyle: 'solid',
+              borderSize: 1,
+              borderDashedValue: [2, 2],
+              paddingLeft: 4,
+              paddingTop: 4,
+              paddingRight: 4,
+              paddingBottom: 4,
+              borderRadius: 2,
+            },
+          },
+          tooltip: {
+            offsetLeft: 4,
+            offsetTop: 6,
+            offsetRight: 4,
+            offsetBottom: 6,
+            showRule: 'always',
+            showType: 'standard',
+            showName: true,
+            showParams: true,
+            defaultValue: 'n/a',
+            text: {
+              size: 12,
+              family: '"Roboto", sans-serif',
+              weight: 'normal',
+              color: '#FFFFFF',
+              marginTop: 4,
+              marginRight: 8,
+              marginBottom: 4,
+              marginLeft: 8,
+            },
+            icons: [],
+          },
+        },
+      },
+      mainIndicators: ['candle_volume'],
+      theme: 'dark',
+      period: { multiplier: 1, timespan: 'day', text: 'D' },
+      datafeed: new kline.DefaultDatafeed(`R8F_9kQRGZZ87CUuO0bNpybcPWith5RL`),
+    });
+  </script>
+</body>
+
 </html>
