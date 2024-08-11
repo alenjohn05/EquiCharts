@@ -1,21 +1,54 @@
 {
   "name": "equicharts-widget",
+  "description": "Lightweight chart widget built with html5 canvas",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "licenses/",
+    "NOTICE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alenjohn05/EquiCharts"
+  },
+  "bugs": {
+    "url": "https://github.com/alenjohn05/EquiCharts/issues"
+  },
+  "keywords": [
+    "equicharts",
+    "candlestick",
+    "indicator",
+    "equicharts",
+    "stockchart",
+    "trading",
+    "stock-market",
+    "trading-algorithms",
+    "stocks",
+    "financial-data",
+    "financial-analysis",
+    "algorithmic-trading",
+    "stock-chart",
+    "finacial-modeling",
+    "technical-analysis"
+  ],
+  "author": "alenjohn05",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
-    "build-main": "tsc && vite build",
-    "build-dts": "dts-bundle-generator --no-banner true --umd-module-name equichartswidget -o dist/index.d.ts src/index.ts",
     "build": "npm run build-main && npm run build-dts",
-    "preview": "vite preview",
     "build:core": "npm run build --workspace equicharts",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,md}\""
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "rollup": "^4.20.0",
     "solid-js": "^1.8.19"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
